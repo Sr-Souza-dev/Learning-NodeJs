@@ -1,0 +1,43 @@
+###Faz login
+post http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "gabriel@gabriel.com",
+    "senha": "123456"
+}
+###
+
+DELETE http://localhost:5000/logout
+Authorization: b11fc650925f1ece200e63b412902f5e
+###
+
+GET http://localhost:5000/usuarios/4
+Authorization: b11fc650925f1ece200e63b412902f5e
+
+### Cadastra usuario
+post http://localhost:5000/usuarios/cadastro
+Content-Type: application/json
+Authorization: b11fc650925f1ece200e63b412902f5e
+
+{
+    "nome": "Testando Cadastro",
+    "email": "teste@teste.com",
+    "senha": "123456",
+    "idPerfil": 1
+}
+
+### Atualiza usuarios
+put http://localhost:5000/usuarios/atualiza/4
+Content-Type: application/json
+Authorization: b11fc650925f1ece200e63b412902f5e
+
+ {
+  "id": 4,
+  "nome": "Testando Cadastro E Atualização de dados",
+  "email": "teste@teste1.com",
+  "idPerfil": 1,
+  "inativationDate": null,
+  "createdAt": "2022-04-19T18:51:21.000Z",
+  "updatedAt": "2022-04-19T18:51:21.000Z"
+}
